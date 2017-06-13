@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<!-- Jquery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- BOOTSTRAP JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!-- Angular -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+	<!-- Controller -->
+	<script type="text/javascript" src="app.js"></script>
+
+	
+
+	<title>Infotech Test</title>
+</head>
+
+<body>
+	<!-- en este contenedor se mostraran los datos vía angular -->
+
+	<div ng-controller="appController">
+		<h1>Users</h1>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th colspan="5">Adress</th>
+					<th>Phone</th>
+					<th>Website</th>
+					<th colspan="3">Company</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="data in datos">
+					<td>{{ data.id}}</td>
+					<td>{{ data.name}}</td>
+					<td>{{ data.username}}</td>
+					<td>{{ data.email}}</td>
+
+					<td><b>Street </b><br>	{{ data.address.street}}</td>
+					<td><b>Suite </b><br>	{{ data.address.suite}}</td>
+					<td><b>City </b><br> 	{{ data.address.city}}</td>
+					<td><b>Zipcode</b><br>  {{ data.address.zipcode}}</td>
+					<td><b>Geo </b><br>
+						<b>Lat: </b>{{ data.address.geo.lat}} | 
+						<b>Lng: </b>{{ data.address.geo.lng}}
+					</td>
+
+					<td>{{ data.phone}}</td>
+					<td>{{ data.website }}</td>
+
+					<td><b>Name</b><br>			{{ data.company.name }}</td>
+					<td><b>CatchPhrase</b><br>	{{ data.company.catchPhrase }}</td>
+					<td><b>Bs </b><br> 			{{ data.company.bs }}</td>
+				
+					
+				
+			</tbody>
+		</table>
+	</div>
+<!-- EDINSON HUAYNA -->
+</body>
+
+</html>
